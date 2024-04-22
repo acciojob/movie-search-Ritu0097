@@ -59,7 +59,9 @@ function MovieSearch() {
 			<div className="movie-list">
 				{movies.map((movie) => (
 					<div className="movie" key={movie.imdbID}>
+                        <li>
 						<h2>{`${movie.Title} (${movie.Year})`}</h2>
+                        </li>
 						<img
 							src={
 								movie.Poster !== 'N/A'
