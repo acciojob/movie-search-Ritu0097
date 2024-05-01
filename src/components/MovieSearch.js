@@ -1,4 +1,3 @@
-// MovieSearch.js
 import React, { useState } from 'react'
 import './App.css'
 
@@ -17,13 +16,11 @@ function MovieSearch() {
 		setMovies([])
 		setErrorMessage('')
 
-		// If search input is empty, show error message
 		if (!searchInput.trim()) {
 			setErrorMessage('Please enter a movie title.')
 			return
 		}
 
-		// Fetch data from OMDb API
 		fetch(
 			`http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(
 				searchInput
@@ -32,10 +29,8 @@ function MovieSearch() {
 			.then((response) => response.json())
 			.then((data) => {
 				if (data.Response === 'True') {
-					// Display search results
 					setMovies(data.Search)
 				} else {
-					// Show error message for invalid search
 					setErrorMessage('Invalid movie name. Please try again.')
 				}
 			})
@@ -44,7 +39,6 @@ function MovieSearch() {
 				setErrorMessage('An error occurred. Please try again later.')
 			})
 	}
-
 	return (
 		<div className="container">
 			<h1>Movie Search</h1>
@@ -60,7 +54,7 @@ function MovieSearch() {
 				{movies.map((movie) => (
 					<div className="movie" key={movie.imdbID}>
                         <li>
-						<h2>{`${movie.Title} (${movie.Year})`}</h2>
+						<h2><li>{`${movie.Title} (${movie.Year})`}</li></h2>
                         </li>
 						<img
 							src={
