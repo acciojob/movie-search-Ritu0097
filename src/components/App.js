@@ -1,13 +1,12 @@
-// App.js
-import React from 'react';
-import MovieSearch from './MovieSearch';
+import React from 'react'
+import SearchBar from './SearchBar'
 
-function App() {
-  return (
-    <div>
-      <MovieSearch />
-    </div>
-  );
+const App = () => {
+	return (
+		<div>
+			<SearchBar />
+		</div>
+	)
 }
 
-export default App;
+export default App
